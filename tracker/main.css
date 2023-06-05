@@ -99,6 +99,15 @@ color: rgb(13, 46, 99);
       
         color: white;
     }
+    /* copilot */
+    /* when i hove on buttons i want background color to change and the button to scale up a little bit */
+    .buttons__container #add__income:hover,
+    .buttons__container #add__expense:hover{
+        background-color: rgb(182, 192, 207);
+        transform: scale(1.1);
+        transition: all 0.3s ease-in-out;
+    }
+
 #add__income{
     background-color: green;
 }
@@ -140,8 +149,47 @@ color: rgb(13, 46, 99);
 .item__income,
 .item__expense{
     display: flex;
-    justify-content: space-between;
-    
 }
 
+.income p, .income span{
+    color: green;
+}
+.expense p,.expense span{
+    color: red;
+}
 
+/* delete icon css */
+.item .far{
+    position:absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    background-color: red;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    cursor: pointer;
+    transform: translateX(30px);
+    opacity : 0;
+}
+
+.item:hover .far{
+    transform: translateX(0px);
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+/* copilot */
+@keyframes showDelete{
+    0%{
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
